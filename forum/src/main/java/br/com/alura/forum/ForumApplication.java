@@ -13,6 +13,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class ForumApplication {
 
+	//Configure this VM argument before run this class in dev environment: -Dspring.profiles.active=dev
+	//prod configuration: -Dspring.profiles.active=prod
 	public static void main(String[] args) {
 		SpringApplication.run(ForumApplication.class, args);
 	}
