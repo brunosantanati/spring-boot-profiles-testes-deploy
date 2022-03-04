@@ -5,7 +5,24 @@ Upgrading from Spring Boot 2.2 to Spring Boot 2.3
 https://github.com/spring-projects/spring-boot/releases/tag/v2.3.0.RELEASE
 https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3-Release-Notes#upgrading-from-spring-boot-22
 
-Para gerar jar executar o comando abaixo:
+############# COMANDOS
+
+- Para gerar jar executar o comando abaixo:
 mvn clean package
-Para rodar o jar (que está no diretório target) executar:
+
+- Para rodar o jar (que está no diretório target) executar:
 java -jar -Dspring.profiles.active=prod forum-0.0.1-SNAPSHOT.jar
+
+- Para rodar passaando o profile e variáveis de ambiente:
+
+1-seta a variável de ambiente, no caso de Linux-like rodar no terminal algo como
+EXPORT FORUM_DATABASE_URL=jdbc:h2:mem:alura-forum
+no Windows
+set FORUM_DATABASE_URL=jdbc:h2:mem:alura-forum
+para ver se deu certo: echo %FORUM_DATABASE_URL%
+
+2-ou passar via parâmetro na linha de comando
+java -jar -Dspring.profiles.active=prod -DFORUM_DATABASE_URL=jdbc:h2:mem:alura-forum -DFORUM_DATABASE_USERNAME=sa -DFORUM_DATABASE_PASSWORD= -D forum.jar
+
+Deu problema para setar o secret abaixo como variável de ambiente devido aos caracteres especiais. Teria que ver como contornar isso.
+FORUM_JWT_SECRET=A+X;fTJP&Pd,TD9dwVq(hsHX,ya^<wsD_UK7L+@=S;{'CydP]{v@}G'b>et;yz$*\yL5S8EJN:%P:X%H9>#nYLrX}@\s?CQcpspH,2emzBc!Q[V'AYa~uzF8WR~AUrMzxp/V$9([S9X#zj/CH('#]B_Hc+%fGhe27YB;^j4\Xk=Ju"Ap~_&<L;=!Z;!,2UP;!hF3P]j85#*`&T]/kB/W^6$v~u6qpejL>kY^f)sy4:qTq_Ec!-z!@aAp~sLKGU>$
