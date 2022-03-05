@@ -5,6 +5,9 @@ Upgrading from Spring Boot 2.2 to Spring Boot 2.3
 https://github.com/spring-projects/spring-boot/releases/tag/v2.3.0.RELEASE
 https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3-Release-Notes#upgrading-from-spring-boot-22
 
+Fazer deploy aplicação com imagem Docker no Heroku
+https://devcenter.heroku.com/articles/container-registry-and-runtime
+
 ############# COMANDOS
 
 - Para gerar jar executar o comando abaixo:
